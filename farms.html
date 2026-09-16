@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Farm Surplus – Birp</title>
+  <link rel="stylesheet" href="css/main.css?v=6" />
+  <link rel="stylesheet" href="css/animations.css?v=4" />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,700&family=Barlow:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="navbar scrolled" id="navbar">
+    <div class="nav-inner">
+      <a href="index.html" class="logo">
+        <span class="logo-leaf">🌿</span>
+        <span class="logo-text">Birp</span>
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="deals.html">Find Deals</a></li>
+        <li><a href="farms.html" class="active">Farm Surplus</a></li>
+        <li><a href="about.html">Our Story</a></li>
+        <li>
+          <div class="nav-search">
+            <span class="nav-search-icon">🔍</span>
+            <input type="text" placeholder="Search deals…" id="navSearchInput" autocomplete="off" />
+          </div>
+        </li>
+        <li><a href="#" class="btn-nav" id="openLogin">Log In</a></li>
+        <li><a href="#" class="btn-nav btn-nav-filled" id="openSignup">Sign Up</a></li>
+      </ul>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- PAGE HERO -->
+  <section class="page-hero farms-hero">
+    <div class="page-hero-blobs">
+      <div class="blob blob-1 green"></div>
+      <div class="blob blob-2 green"></div>
+    </div>
+    <!-- Farm garden photo backdrop -->
+    <div class="farms-hero-photo"></div>
+    <div class="farms-hero-overlay"></div>
+    <div class="container">
+      <div class="page-hero-content reveal">
+        <span class="section-tag section-tag-white">🌾 Farm Programme</span>
+        <h1>From field waste<br>to community wealth</h1>
+        <p>Farms across South Africa generate tonnes of organic waste. We turn that into compost, fertiliser and discounted vegetable boxes — closing the loop on food.</p>
+        <div class="hero-cta">
+          <a href="#farm-listings" class="btn-primary">See Available Listings</a>
+          <a href="#how-farm-works" class="btn-ghost-white">How It Works ↓</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FARM STATS -->
+  <section class="stats-section green-stats">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stat-card reveal">
+          <div class="stat-number" data-target="850">0</div>
+          <div class="stat-unit">kg</div>
+          <div class="stat-label">Organic Waste Diverted</div>
+        </div>
+        <div class="stat-card reveal">
+          <div class="stat-number" data-target="24">0</div>
+          <div class="stat-unit">+</div>
+          <div class="stat-label">Partner Farms</div>
+        </div>
+        <div class="stat-card reveal">
+          <div class="stat-number" data-target="320">0</div>
+          <div class="stat-unit">bags</div>
+          <div class="stat-label">Compost Distributed</div>
+        </div>
+        <div class="stat-card reveal">
+          <div class="stat-number" data-target="40">0</div>
+          <div class="stat-unit">%</div>
+          <div class="stat-label">Avg Veg Box Savings</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW THE FARM PROGRAMME WORKS -->
+  <section class="how-section" id="how-farm-works">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">The Programme</span>
+        <h2>Closing the Loop on Farm Waste</h2>
+        <p>We work directly with farms to intercept organic waste before it goes to landfill.</p>
+      </div>
+      <div class="farm-flow">
+        <div class="flow-step reveal">
+          <div class="flow-icon">🌾</div>
+          <h3>Farm Lists Surplus</h3>
+          <p>Farms submit their organic waste and surplus produce directly through our platform.</p>
+          <div class="flow-arrow">→</div>
+        </div>
+        <div class="flow-step reveal">
+          <div class="flow-icon">🔄</div>
+          <h3>We Sort & Process</h3>
+          <p>Edible surplus becomes discounted veg boxes. Non-edible waste is composted or turned into fertiliser.</p>
+          <div class="flow-arrow">→</div>
+        </div>
+        <div class="flow-step reveal">
+          <div class="flow-icon">🌱</div>
+          <h3>Community Benefits</h3>
+          <p>Users get affordable organic veg. Schools and gardens receive free compost. Farms avoid disposal costs.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WASTE TYPES EXPLAINER -->
+  <section class="waste-section">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">What We Collect</span>
+        <h2>Two streams, one solution</h2>
+      </div>
+      <div class="waste-grid">
+        <div class="waste-card waste-edible reveal">
+          <div class="waste-icon">🥦</div>
+          <h3>Edible Surplus</h3>
+          <p>Oddly shaped vegetables, cosmetically imperfect produce, excess harvest — perfectly good food that would be discarded purely for looks or volume.</p>
+          <ul>
+            <li>✅ Packed into affordable veg boxes</li>
+            <li>✅ Listed on Birp at 40–60% discount</li>
+            <li>✅ Delivered or collected from the farm</li>
+          </ul>
+          <a href="#farm-listings" class="btn-primary">Browse Veg Boxes</a>
+        </div>
+        <div class="waste-card waste-organic reveal">
+          <div class="waste-icon">🍂</div>
+          <h3>Organic Waste</h3>
+          <p>Peels, husks, trimmings and non-edible plant matter. Instead of going to landfill, this becomes something valuable for communities.</p>
+          <ul>
+            <li>♻️ Composted into rich garden compost</li>
+            <li>🌿 Processed into organic fertiliser</li>
+            <li>🏫 Distributed free to schools &amp; community gardens</li>
+          </ul>
+          <a href="#compost-listings" class="btn-ghost">Get Compost / Fertiliser</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FARM LISTINGS -->
+  <section class="deals-section" id="farm-listings">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">Available Now</span>
+        <h2>Farm Surplus Listings</h2>
+      </div>
+      <div class="deals-grid">
+
+        <div class="deal-card reveal" data-category="veg">
+          <div class="deal-badge">🌱 Organic</div>
+          <div class="deal-img farm-img-1"></div>
+          <div class="deal-body">
+            <div class="deal-cat-tag">🥦 Veg Box</div>
+            <h3>Spier Farm, Stellenbosch</h3>
+            <p class="deal-desc">Mixed seasonal vegetable box — kale, beetroot, carrots &amp; more. Organic certified.</p>
+            <div class="deal-time">📦 Collect: Monday – Wednesday</div>
+            <div class="deal-footer">
+              <div class="deal-price">
+                <span class="price-now">R 50</span>
+                <span class="price-was">R 150</span>
+              </div>
+              <button class="btn-reserve" onclick="openReserveModal(this)" data-store="Spier Farm" data-item="Organic Veg Box" data-price="R50">Reserve</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="deal-card reveal" data-category="compost">
+          <div class="deal-img farm-img-2"></div>
+          <div class="deal-body">
+            <div class="deal-cat-tag">♻️ Compost</div>
+            <h3>Vergelegen Estate</h3>
+            <p class="deal-desc">5kg bags of premium compost made from estate food waste. Perfect for gardens.</p>
+            <div class="deal-time">📦 Collect: Any weekday</div>
+            <div class="deal-footer">
+              <div class="deal-price">
+                <span class="price-now">FREE</span>
+                <span class="price-was">R 60 value</span>
+              </div>
+              <button class="btn-reserve" onclick="openReserveModal(this)" data-store="Vergelegen Estate" data-item="Premium Compost Bag (5kg)" data-price="FREE">Reserve</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="deal-card reveal" data-category="veg">
+          <div class="deal-img farm-img-3"></div>
+          <div class="deal-body">
+            <div class="deal-cat-tag">🥕 Imperfect Veg</div>
+            <h3>Boschendal Farm</h3>
+            <p class="deal-desc">"Ugly" but perfectly edible carrots, potatoes &amp; onions. Bulk bag for families.</p>
+            <div class="deal-time">📦 Collect: Friday &amp; Saturday</div>
+            <div class="deal-footer">
+              <div class="deal-price">
+                <span class="price-now">R 35</span>
+                <span class="price-was">R 90</span>
+              </div>
+              <button class="btn-reserve" onclick="openReserveModal(this)" data-store="Boschendal Farm" data-item="Imperfect Veg Bulk Bag" data-price="R35">Reserve</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="deal-card reveal" data-category="fertiliser">
+          <div class="deal-badge">🌿 Popular</div>
+          <div class="deal-img farm-img-4"></div>
+          <div class="deal-body">
+            <div class="deal-cat-tag">🌿 Fertiliser</div>
+            <h3>Morgenster Olives</h3>
+            <p class="deal-desc">Olive pomace organic fertiliser — rich in nutrients, great for vegetable gardens.</p>
+            <div class="deal-time">📦 Collect: Tuesday &amp; Thursday</div>
+            <div class="deal-footer">
+              <div class="deal-price">
+                <span class="price-now">R 20</span>
+                <span class="price-was">R 75</span>
+              </div>
+              <button class="btn-reserve" onclick="openReserveModal(this)" data-store="Morgenster Olives" data-item="Olive Pomace Fertiliser (3kg)" data-price="R20">Reserve</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="deal-card reveal" data-category="veg">
+          <div class="deal-img farm-img-5"></div>
+          <div class="deal-body">
+            <div class="deal-cat-tag">🍅 Heirloom Veg</div>
+            <h3>Nuy Valley Farm</h3>
+            <p class="deal-desc">Heirloom tomatoes &amp; peppers from excess harvest. Flavourful, sustainable &amp; local.</p>
+            <div class="deal-time">📦 Collect: Wednesday &amp; Saturday</div>
+            <div class="deal-footer">
+              <div class="deal-price">
+                <span class="price-now">R 40</span>
+                <span class="price-was">R 110</span>
+              </div>
+              <button class="btn-reserve" onclick="openReserveModal(this)" data-store="Nuy Valley Farm" data-item="Heirloom Tomato & Pepper Box" data-price="R40">Reserve</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="deal-card reveal" data-category="compost">
+          <div class="deal-img farm-img-6"></div>
+          <div class="deal-body">
+            <div class="deal-cat-tag">♻️ Compost</div>
+            <h3>Hazendal Wine Estate</h3>
+            <p class="deal-desc">Wine grape marc compost — rich &amp; dark. Ideal for school gardens &amp; community plots.</p>
+            <div class="deal-time">📦 Collect: Mon, Wed, Fri</div>
+            <div class="deal-footer">
+              <div class="deal-price">
+                <span class="price-now">FREE</span>
+                <span class="price-was">R 50 value</span>
+              </div>
+              <button class="btn-reserve" onclick="openReserveModal(this)" data-store="Hazendal Wine Estate" data-item="Wine Marc Compost (5kg)" data-price="FREE">Reserve</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- PARTNER WITH US -->
+  <section class="partner-section">
+    <div class="container">
+      <div class="partner-inner reveal">
+        <div class="partner-text">
+          <span class="section-tag">For Farms</span>
+          <h2>Are you a farm with surplus?</h2>
+          <p>Join our farm network and connect your organic waste and surplus produce with the people who need it most. We handle logistics, listings and community connections.</p>
+          <ul class="impact-list">
+            <li>✅ Zero disposal costs for organic waste</li>
+            <li>✅ Revenue from surplus veg boxes</li>
+            <li>✅ Positive community &amp; environmental impact</li>
+            <li>✅ Simple platform — submit listings in minutes</li>
+          </ul>
+          <a href="mailto:birp@bishops.org.za" class="btn-primary">Partner With Us</a>
+        </div>
+        <div class="partner-visual reveal-right">
+          <div class="farm-cycle">
+            <div class="cycle-node cn-top">🌾 Farm Surplus</div>
+            <div class="cycle-node cn-right">🥦 Veg Boxes</div>
+            <div class="cycle-node cn-bottom">🌱 Compost</div>
+            <div class="cycle-node cn-left">🏘️ Community</div>
+            <div class="cycle-center">♻️</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RESERVE MODAL -->
+  <div class="modal-overlay" id="reserveModal">
+    <div class="modal" id="reserveModalBox">
+      <button class="modal-close" id="closeReserveModal">✕</button>
+      <div class="reserve-content">
+        <div class="reserve-icon">🛒</div>
+        <h3 id="reserveStoreName">Store Name</h3>
+        <p id="reserveItemName">Item Description</p>
+        <div class="reserve-price-display" id="reservePriceDisplay">R --</div>
+        <div class="reserve-note">You'll receive a confirmation code to show at pick-up.</div>
+        <button class="btn-primary full-width" id="confirmReserve">Confirm Reservation</button>
+        <div class="reserve-success hidden" id="reserveSuccess">
+          <div class="success-icon">✅</div>
+          <strong>Reserved!</strong>
+          <p>Your code: <strong id="reserveCode">FF-0000</strong></p>
+          <p>Show this at the farm during your collection window.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- AUTH MODAL -->
+  <div class="modal-overlay" id="authModal">
+    <div class="modal" id="authModalBox">
+      <button class="modal-close" id="closeModal">✕</button>
+      <div class="modal-tabs">
+        <button class="tab-btn active" data-tab="login">Log In</button>
+        <button class="tab-btn" data-tab="signup">Sign Up</button>
+      </div>
+      <div class="tab-content active" id="tab-login">
+        <h3>Welcome back 👋</h3>
+        <form class="auth-form">
+          <label>Email<input type="email" placeholder="you@example.com" required /></label>
+          <label>Password<input type="password" placeholder="••••••••" required /></label>
+          <button type="submit" class="btn-primary full-width">Log In</button>
+        </form>
+      </div>
+      <div class="tab-content" id="tab-signup">
+        <h3>Join Birp 🌿</h3>
+        <form class="auth-form">
+          <label>Full Name<input type="text" placeholder="Your name" required /></label>
+          <label>Email<input type="email" placeholder="you@example.com" required /></label>
+          <label>Password<input type="password" placeholder="Create a password" required /></label>
+          <button type="submit" class="btn-primary full-width">Create Account</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-bottom">
+        <span>© 2026 Birp. A Bishops Big Ideas Project.</span>
+        <span>Made with 💚 by Grade 9</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

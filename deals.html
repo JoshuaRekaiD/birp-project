@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Find Deals – Birp</title>
+  <link rel="stylesheet" href="css/main.css?v=6" />
+  <link rel="stylesheet" href="css/animations.css?v=4" />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,700&family=Barlow:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="navbar scrolled" id="navbar">
+    <div class="nav-inner">
+      <a href="index.html" class="logo">
+        <span class="logo-leaf">🌿</span>
+        <span class="logo-text">Birp</span>
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="deals.html" class="active">Find Deals</a></li>
+        <li><a href="farms.html">Farm Surplus</a></li>
+        <li><a href="about.html">Our Story</a></li>
+        <li>
+          <div class="nav-search">
+            <span class="nav-search-icon">🔍</span>
+            <input type="text" placeholder="Search deals…" id="navSearchInput" autocomplete="off" />
+          </div>
+        </li>
+        <li><a href="#" class="btn-nav" id="openLogin">Log In</a></li>
+        <li><a href="#" class="btn-nav btn-nav-filled" id="openSignup">Sign Up</a></li>
+      </ul>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- PAGE HERO -->
+  <section class="page-hero deals-hero">
+    <div class="page-hero-blobs">
+      <div class="blob blob-1"></div>
+      <div class="blob blob-2"></div>
+    </div>
+    <div class="container">
+      <div class="page-hero-content reveal">
+        <span class="section-tag">Today's Deals</span>
+        <h1>Find surplus food near you</h1>
+        <p>Browse bundles from local businesses — reserved fresh, picked up today.</p>
+        <div class="search-bar">
+          <input type="text" placeholder="🔍  Search by store, area or food type…" id="searchInput" />
+          <button class="btn-primary">Search</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FILTERS -->
+  <section class="filters-section">
+    <div class="container">
+      <div class="filters-row">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="restaurant">🍽️ Restaurants</button>
+        <button class="filter-btn" data-filter="bakery">🍞 Bakeries</button>
+        <button class="filter-btn" data-filter="cafe">☕ Cafés</button>
+        <button class="filter-btn" data-filter="grocery">🛒 Grocery</button>
+        <button class="filter-btn" data-filter="deli">🥩 Delis</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- DEALS GRID -->
+  <section class="deals-section">
+    <div class="container">
+      <p class="results-count" id="resultsCount">Showing <strong>12</strong> deals</p>
+      <div class="deals-grid" id="dealsGrid">
+
+        <!-- Deal Card 1 -->
+        <div class="deal-card reveal" data-category="bakery">
+          <div class="deal-badge">🔥 Almost Gone</div>
+          <div class="deal-img deal-img-bakery"></div>
+          <div class="deal-body">
+            <div class="deal-cat-tag">🍞 Bakery</div>
+            <h3>Heritage Bakery</h3>
+            <p class="deal-desc">End-of-day bread, rolls &amp; pastries. Contents vary — always delicious.</p>
+            <div class="deal-time">⏰ Pick up: 4:00 PM – 5:30 PM</div>
+            <div class="deal-footer">
+              <div class="deal-price">
+                <span class="price-now">R 25</span>
+                <span class="price-was">R 80</span>
+              </div>
+              <button class="btn-reserve" onclick="openReserveModal(this)" data-store="Heritage Bakery" data-item="End-of-Day Bread Bag" data-price="R25">Reserve</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Deal Card 2 -->
+        <div class="deal-card reveal" data-category="restaurant">
+          <div class="deal-img deal-img-restaurant"></div>
+          <div class="deal-body">
+            <div class="deal-cat-tag">🍽️ Restaurant</div>
+            <h3>The Green Bowl</h3>
+            <p class="deal-desc">Surprise salad &amp; warm meal bundle — chef's choice from today's menu.</p>
+            <div class="deal-time">⏰ Pick up: 7:00 PM – 8:30 PM</div>
+            <div class="deal-footer">
+              <div class="deal-price">
+                <span class="price-now">R 35</span>
+                <span class="price-was">R 120</span>
+              </div>
+              <button class="btn-reserve" onclick="openReserveModal(this)" data-store="The Green Bowl" data-item="Surprise Salad Bundle" data-price="R35">Reserve</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Deal Card 3 -->
+        <div class="deal-card reveal" data-category="cafe">
+          <div class="deal-badge">⚡ New</div>
+          <div class="deal-img deal-img-cafe"></div>
+          <div class="deal-body">
+            <div class="deal-cat-tag">☕ Café</div>
+            <h3>Sunrise Coffee Co.</h3>
+            <p class="deal-desc">Leftover pastries, muffins and a drink voucher. Perfect afternoon snack.</p>
+            <div class="deal-time">⏰ Pick up: 3:00 PM – 4:30 PM</div>
+            <div class="deal-footer">
+              <div class="deal-price">
+                <span class="price-now">R 30</span>
+                <span class="price-was">R 90</span>
+              </div>
+              <button class="btn-reserve" onclick="openReserveModal(this)" data-store="Sunrise Coffee Co." data-item="Afternoon Snack Bundle" data-price="R30">Reserve</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Deal Card 4 -->
+        <div class="deal-card reveal" data-category="grocery">
+          <div class="deal-img deal-img-grocery"></div>
+          <div class="deal-body">
+            <div class="deal-cat-tag">🛒 Grocery</div>
+            <h3>FreshMart Newlands</h3>
+            <p class="deal-desc">Near-best-before pantry bundle — dry goods, snacks &amp; condiments.</p>
+            <div class="deal-time">⏰ Pick up: 5:00 PM – 7:00 PM</div>
+            <div class="deal-footer">
+              <div class="deal-price">
+                <span class="price-now">R 55</span>
+                <span class="price-was">R 160</span>
+              </div>
+              <button class="btn-reserve" onclick="openReserveModal(this)" data-store="FreshMart Newlands" data-item="Pantry Bundle" data-price="R55">Reserve</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Deal Card 5 -->
+        <div class="deal-card reveal" data-category="deli">
+          <div class="deal-badge">🔥 Popular</div>
+          <div class="deal-img deal-img-deli"></div>
+          <div class="deal-body">
+            <div class="deal-cat-tag">🥩 Deli</div>
+            <h3>The Deli Corner</h3>
+            <p class="deal-desc">Charcuterie, cheese &amp; prepared salads — restaurant quality at half the price.</p>
+            <div class="deal-time">⏰ Pick up: 6:00 PM – 7:30 PM</div>
+            <div class="deal-footer">
+              <div class="deal-price">
+                <span class="price-now">R 45</span>
+                <span class="price-was">R 130</span>
+              </div>
+              <button class="btn-reserve" onclick="openReserveModal(this)" data-store="The Deli Corner" data-item="Chef's Surplus Pack" data-price="R45">Reserve</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Deal Card 6 -->
+        <div class="deal-card reveal" data-category="restaurant">
+          <div class="deal-img deal-img-restaurant2"></div>
+          <div class="deal-body">
+            <div class="deal-cat-tag">🍽️ Restaurant</div>
+            <h3>Nando's Claremont</h3>
+            <p class="deal-desc">End-of-night peri-peri chicken bundle. Includes sides &amp; pitas.</p>
+            <div class="deal-time">⏰ Pick up: 9:00 PM – 10:00 PM</div>
+            <div class="deal-footer">
+              <div class="deal-price">
+                <span class="price-now">R 40</span>
+                <span class="price-was">R 140</span>
+              </div>
+              <button class="btn-reserve" onclick="openReserveModal(this)" data-store="Nando's Claremont" data-item="Peri-Peri Bundle" data-price="R40">Reserve</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Deal Card 7 -->
+        <div class="deal-card reveal" data-category="bakery">
+          <div class="deal-img deal-img-bakery2"></div>
+          <div class="deal-body">
+            <div class="deal-cat-tag">🍞 Bakery</div>
+            <h3>Olympia Bakery</h3>
+            <p class="deal-desc">Sourdough, ciabatta &amp; croissants from this morning's bake — fresh &amp; amazing.</p>
+            <div class="deal-time">⏰ Pick up: 4:30 PM – 6:00 PM</div>
+            <div class="deal-footer">
+              <div class="deal-price">
+                <span class="price-now">R 30</span>
+                <span class="price-was">R 100</span>
+              </div>
+              <button class="btn-reserve" onclick="openReserveModal(this)" data-store="Olympia Bakery" data-item="Artisan Bread Bundle" data-price="R30">Reserve</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Deal Card 8 -->
+        <div class="deal-card reveal" data-category="grocery">
+          <div class="deal-badge">⚡ New</div>
+          <div class="deal-img deal-img-grocery2"></div>
+          <div class="deal-body">
+            <div class="deal-cat-tag">🛒 Grocery</div>
+            <h3>Woolworths Food</h3>
+            <p class="deal-desc">Premium prepared meals &amp; salads nearing sell-by. Quality you know.</p>
+            <div class="deal-time">⏰ Pick up: 6:00 PM – 8:00 PM</div>
+            <div class="deal-footer">
+              <div class="deal-price">
+                <span class="price-now">R 65</span>
+                <span class="price-was">R 200</span>
+              </div>
+              <button class="btn-reserve" onclick="openReserveModal(this)" data-store="Woolworths Food" data-item="Premium Prepared Meals Bundle" data-price="R65">Reserve</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Deal Card 9 -->
+        <div class="deal-card reveal" data-category="cafe">
+          <div class="deal-img deal-img-cafe2"></div>
+          <div class="deal-body">
+            <div class="deal-cat-tag">☕ Café</div>
+            <h3>Truth Coffee</h3>
+            <p class="deal-desc">Baked goods, granola jars &amp; cold brew surprise pack from the day's leftovers.</p>
+            <div class="deal-time">⏰ Pick up: 4:00 PM – 5:00 PM</div>
+            <div class="deal-footer">
+              <div class="deal-price">
+                <span class="price-now">R 40</span>
+                <span class="price-was">R 110</span>
+              </div>
+              <button class="btn-reserve" onclick="openReserveModal(this)" data-store="Truth Coffee" data-item="Coffee Shop Bundle" data-price="R40">Reserve</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Deal Card 10 -->
+        <div class="deal-card reveal" data-category="deli">
+          <div class="deal-img deal-img-deli2"></div>
+          <div class="deal-body">
+            <div class="deal-cat-tag">🥩 Deli</div>
+            <h3>Melissa's Food Shop</h3>
+            <p class="deal-desc">Gourmet sandwich fillings, quiches &amp; soups. Take-home dinner sorted.</p>
+            <div class="deal-time">⏰ Pick up: 5:30 PM – 7:00 PM</div>
+            <div class="deal-footer">
+              <div class="deal-price">
+                <span class="price-now">R 50</span>
+                <span class="price-was">R 145</span>
+              </div>
+              <button class="btn-reserve" onclick="openReserveModal(this)" data-store="Melissa's Food Shop" data-item="Gourmet Deli Bundle" data-price="R50">Reserve</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Deal Card 11 -->
+        <div class="deal-card reveal" data-category="restaurant">
+          <div class="deal-img deal-img-restaurant3"></div>
+          <div class="deal-body">
+            <div class="deal-cat-tag">🍽️ Restaurant</div>
+            <h3>Cape Malay Kitchen</h3>
+            <p class="deal-desc">Traditional Cape Malay stews, rotis &amp; desserts — end of service bundle.</p>
+            <div class="deal-time">⏰ Pick up: 8:30 PM – 9:30 PM</div>
+            <div class="deal-footer">
+              <div class="deal-price">
+                <span class="price-now">R 45</span>
+                <span class="price-was">R 135</span>
+              </div>
+              <button class="btn-reserve" onclick="openReserveModal(this)" data-store="Cape Malay Kitchen" data-item="Cape Malay Bundle" data-price="R45">Reserve</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Deal Card 12 -->
+        <div class="deal-card reveal" data-category="bakery">
+          <div class="deal-img deal-img-bakery3"></div>
+          <div class="deal-body">
+            <div class="deal-cat-tag">🍞 Bakery</div>
+            <h3>Knead Woodstock</h3>
+            <p class="deal-desc">Stone-baked breads, flavoured rolls &amp; cakes — a baker's dozen surprise.</p>
+            <div class="deal-time">⏰ Pick up: 5:00 PM – 6:30 PM</div>
+            <div class="deal-footer">
+              <div class="deal-price">
+                <span class="price-now">R 28</span>
+                <span class="price-was">R 95</span>
+              </div>
+              <button class="btn-reserve" onclick="openReserveModal(this)" data-store="Knead Woodstock" data-item="Baker's Dozen Bundle" data-price="R28">Reserve</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- RESERVE MODAL -->
+  <div class="modal-overlay" id="reserveModal">
+    <div class="modal" id="reserveModalBox">
+      <button class="modal-close" id="closeReserveModal">✕</button>
+      <div class="reserve-content">
+        <div class="reserve-icon">🛒</div>
+        <h3 id="reserveStoreName">Store Name</h3>
+        <p id="reserveItemName">Item Description</p>
+        <div class="reserve-price-display" id="reservePriceDisplay">R --</div>
+        <div class="reserve-note">You'll receive a confirmation code to show at pick-up.</div>
+        <button class="btn-primary full-width" id="confirmReserve">Confirm Reservation</button>
+        <div class="reserve-success hidden" id="reserveSuccess">
+          <div class="success-icon">✅</div>
+          <strong>Reserved!</strong>
+          <p>Your code: <strong id="reserveCode">FF-0000</strong></p>
+          <p>Show this at the store during your pick-up window.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- AUTH MODAL -->
+  <div class="modal-overlay" id="authModal">
+    <div class="modal" id="authModalBox">
+      <button class="modal-close" id="closeModal">✕</button>
+      <div class="modal-tabs">
+        <button class="tab-btn active" data-tab="login">Log In</button>
+        <button class="tab-btn" data-tab="signup">Sign Up</button>
+      </div>
+      <div class="tab-content active" id="tab-login">
+        <h3>Welcome back 👋</h3>
+        <form class="auth-form">
+          <label>Email<input type="email" placeholder="you@example.com" required /></label>
+          <label>Password<input type="password" placeholder="••••••••" required /></label>
+          <button type="submit" class="btn-primary full-width">Log In</button>
+          <p class="auth-switch">No account? <a href="#" data-switch="signup">Sign up</a></p>
+        </form>
+      </div>
+      <div class="tab-content" id="tab-signup">
+        <h3>Join Birp 🌿</h3>
+        <form class="auth-form">
+          <label>Full Name<input type="text" placeholder="Your name" required /></label>
+          <label>Email<input type="email" placeholder="you@example.com" required /></label>
+          <label>Password<input type="password" placeholder="Create a password" required /></label>
+          <button type="submit" class="btn-primary full-width">Create Account</button>
+          <p class="auth-switch">Have an account? <a href="#" data-switch="login">Log in</a></p>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-bottom">
+        <span>© 2026 Birp. A Bishops Big Ideas Project.</span>
+        <span>Made with 💚 by Grade 9</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
